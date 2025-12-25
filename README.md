@@ -15,7 +15,7 @@ This repo accompanies the paper:
 
 See the demo.m file. This demo takes in a triangle mesh and computes a deformed mesh (hopefully) without inverted triangles, under a prescribed boundary curve. 
 
-If the code runs successfully, a mesh without inverted triangles will be produced. You may have to adjust the hyperparameters, especially the `number of iterations`, `learning rates` (step size) and the `type of parameterization` (of matrix A(x)), as described in details in the paper. 
+If the code runs successfully, a mesh without inverted triangles will be produced. You may have to adjust the hyperparameters, especially the `number of iterations`, `learning rates` (step size) and the `type of parameterization` (of matrix A(x)), as described in details in the paper. The demo does not use the optinal post-processing joint-space Newton step (Sec. 9.2.1 in the paper), which is only necessary for very few ill conditioned examples; if useful you can refer to oracle_joint_hessian.m for that step. 
 
 # Installation
 
@@ -24,6 +24,8 @@ There are two dependencies: gptoolbox and SuiteSparse.
 ```
 git clone https://github.com/alecjacobson/gptoolbox.git  # download the gptoolbox 
 ```
+
+I have copied the relevant gptoolbox functions to the repo, so you do not have to install gptoolbox anymore. 
 
 Following the instruction to install SuiteSparse 7.0.1 (note the latest the version of SuiteSparse removes some dependent functions such as the sparse2 function)
 
